@@ -1,0 +1,6 @@
+#pragma once
+#include <string>
+
+<% @strings_hash.each do |name, variable| %> 
+  std::string const <%= name %> = "<%= variable %>"; <% end -%>
+

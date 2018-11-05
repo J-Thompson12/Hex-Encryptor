@@ -1,0 +1,48 @@
+image: gitlab.mx.com:4567/$CI_PROJECT_NAMESPACE/ci-images/mobile/linux-toolchain:1.1
+
+stages:
+  - analyze
+  - build
+  - unit tests
+
+clangcheck:
+  stage: analyze
+  before_script:
+    - bundle install --deployment --jobs=2 --retry=3
+  script:
+    - bundle exec clang-check inspect --path $CI_PROJECT_DIR --verbose
+
+cppcheck:
+  stage: analyze
+  before_script:
+    - bundle install --deployment --jobs=2 --retry=3
+  script:
+    - bundle exec cpp-check inspect -v
+
+build:unit tests:
+  stage: build
+  before_script:
+    - ./git-clone-deps.sh
+  script:
+    - mkdir $CI_PROJECT_DIR/test/build
+    - cd $CI_PROJECT_DIR/test/build && cmake .. && make -j2
+  after_script:
+    - |
+      cd $CI_PROJECT_DIR/..
+      for file in $(ls -1); do
+        if [ "${file}" != "${CI_PROJECT_NAME}" ] && [ -d "${file}/.git" ]; then
+          echo "removing dependency ${file}"
+          rm -rf "${file}"
+        fi
+      done
+  artifacts:
+    paths:
+      - $CI_PROJECT_DIR/test/build/active_remote_tests
+    expire_in: 1 day
+
+unit tests:
+  stage: unit tests
+  script:
+    - ./test/build/active_remote_tests --gtest_color=yes
+  dependencies:
+    - build:unit tests

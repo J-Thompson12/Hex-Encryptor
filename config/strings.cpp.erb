@@ -1,0 +1,5 @@
+#include "strings.h"
+
+<% @strings_hash.each do |name, details| %> 
+  std::string const <%= name %> = "<%= details %>"; <% end -%>
+

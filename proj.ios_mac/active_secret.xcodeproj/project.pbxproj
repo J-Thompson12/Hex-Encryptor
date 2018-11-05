@@ -1,0 +1,551 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		87A8C4391C57EA7E008F4540 /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 87A8C4361C57EA7E008F4540 /* libcrypto.a */; };
+		87A8C43B1C57EA7E008F4540 /* libssl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 87A8C4381C57EA7E008F4540 /* libssl.a */; };
+		87A8C4401C57EE03008F4540 /* libz.1.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 87A8C43F1C57EE03008F4540 /* libz.1.tbd */; };
+		AB2309B01F719EF1003323D7 /* libcommon_osx.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AB2309AF1F719EF1003323D7 /* libcommon_osx.a */; };
+		ABB66C3A1EFDD13C008E21FC /* libclibs_osx.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ABB66C391EFDD13C008E21FC /* libclibs_osx.a */; };
+		F2C19453217E730900DA268F /* symmetric_aes.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F2C19452217E730900DA268F /* symmetric_aes.cpp */; };
+		F2C19454217E730900DA268F /* symmetric_aes.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F2C19452217E730900DA268F /* symmetric_aes.cpp */; };
+		F2C19455217E730900DA268F /* symmetric_aes.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F2C19452217E730900DA268F /* symmetric_aes.cpp */; };
+		F2CD64C82141D2F80097BA6C /* symmetric_evp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F2CD64C52141D2F80097BA6C /* symmetric_evp.cpp */; };
+		F2CD64CD2141D3100097BA6C /* test_runner.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F2CD64CA2141D3100097BA6C /* test_runner.cpp */; };
+		F2CD64D02141D3100097BA6C /* active_secret_tests.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F2CD64CB2141D3100097BA6C /* active_secret_tests.cpp */; };
+		F2CD64E02141D7440097BA6C /* active_secret_tests.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F2CD64CB2141D3100097BA6C /* active_secret_tests.cpp */; };
+		F2CD64E12141D7440097BA6C /* symmetric_evp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F2CD64C52141D2F80097BA6C /* symmetric_evp.cpp */; };
+		F2CD64E22141D7440097BA6C /* test_runner.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F2CD64CA2141D3100097BA6C /* test_runner.cpp */; };
+		F2CD64E42141D7440097BA6C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBA47AA317A6D31200B5FC4D /* Foundation.framework */; };
+		F2CF03742152EA4E00D04C0A /* asymmetric_evp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F2CF03722152EA4E00D04C0A /* asymmetric_evp.cpp */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		87A8C3D01C56ADB9008F4540 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+		F2CD64E52141D7440097BA6C /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 12;
+			dstPath = "include/${PRODUCT_NAME}";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		87A8C3D21C56ADB9008F4540 /* active_secret_tests */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = active_secret_tests; sourceTree = BUILT_PRODUCTS_DIR; };
+		87A8C4341C57EA11008F4540 /* gmock.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = gmock.framework; path = ../../clibs/lib/osx/Debug/gmock.framework; sourceTree = "<group>"; };
+		87A8C4361C57EA7E008F4540 /* libcrypto.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcrypto.a; path = ../../clibs/lib/osx/Release/libcrypto.a; sourceTree = "<group>"; };
+		87A8C4381C57EA7E008F4540 /* libssl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libssl.a; path = ../../clibs/lib/osx/Release/libssl.a; sourceTree = "<group>"; };
+		87A8C43C1C57EBCC008F4540 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/System/Library/Frameworks/Security.framework; sourceTree = DEVELOPER_DIR; };
+		87A8C43F1C57EE03008F4540 /* libz.1.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.1.tbd; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/usr/lib/libz.1.tbd; sourceTree = DEVELOPER_DIR; };
+		AB2309AF1F719EF1003323D7 /* libcommon_osx.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcommon_osx.a; path = "../../../Library/Developer/Xcode/DerivedData/moneymobilex-foryzsffftnizkfwvksprkbuegna/Build/Products/Debug/libcommon_osx.a"; sourceTree = "<group>"; };
+		ABB66C391EFDD13C008E21FC /* libclibs_osx.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libclibs_osx.a; path = "../../../Library/Developer/Xcode/DerivedData/moneymobilex-foryzsffftnizkfwvksprkbuegna/Build/Products/Debug/libclibs_osx.a"; sourceTree = "<group>"; };
+		EBA47AA317A6D31200B5FC4D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		F21132C7216BC89400377246 /* symmetric_aes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = symmetric_aes.h; sourceTree = "<group>"; };
+		F211335B2171488500377246 /* base64.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = base64.hpp; sourceTree = "<group>"; };
+		F2C19452217E730900DA268F /* symmetric_aes.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = symmetric_aes.cpp; sourceTree = "<group>"; };
+		F2CD64C52141D2F80097BA6C /* symmetric_evp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = symmetric_evp.cpp; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.cpp; };
+		F2CD64C62141D2F80097BA6C /* symmetric_evp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = symmetric_evp.h; sourceTree = "<group>"; };
+		F2CD64CA2141D3100097BA6C /* test_runner.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = test_runner.cpp; path = ../test/src/test_runner.cpp; sourceTree = "<group>"; };
+		F2CD64CB2141D3100097BA6C /* active_secret_tests.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = active_secret_tests.cpp; path = ../test/src/active_secret_tests.cpp; sourceTree = "<group>"; };
+		F2CD64E92141D7440097BA6C /* libactive_secret_ios.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libactive_secret_ios.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		F2CF03722152EA4E00D04C0A /* asymmetric_evp.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = asymmetric_evp.cpp; sourceTree = "<group>"; };
+		F2CF03732152EA4E00D04C0A /* asymmetric_evp.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = asymmetric_evp.h; sourceTree = "<group>"; };
+		F5C997B91A154BBC0026054E /* libactive_secret_osx.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libactive_secret_osx.a; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		87A8C3CF1C56ADB9008F4540 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AB2309B01F719EF1003323D7 /* libcommon_osx.a in Frameworks */,
+				ABB66C3A1EFDD13C008E21FC /* libclibs_osx.a in Frameworks */,
+				87A8C4401C57EE03008F4540 /* libz.1.tbd in Frameworks */,
+				87A8C4391C57EA7E008F4540 /* libcrypto.a in Frameworks */,
+				87A8C43B1C57EA7E008F4540 /* libssl.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F2CD64E32141D7440097BA6C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F2CD64E42141D7440097BA6C /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F5C997B61A154BBC0026054E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		8216D5821A9D412500ECED68 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				F211335B2171488500377246 /* base64.hpp */,
+				F2CD64C62141D2F80097BA6C /* symmetric_evp.h */,
+				F2CD64C52141D2F80097BA6C /* symmetric_evp.cpp */,
+				F2CF03732152EA4E00D04C0A /* asymmetric_evp.h */,
+				F2CF03722152EA4E00D04C0A /* asymmetric_evp.cpp */,
+				F21132C7216BC89400377246 /* symmetric_aes.h */,
+				F2C19452217E730900DA268F /* symmetric_aes.cpp */,
+			);
+			name = src;
+			path = ../src;
+			sourceTree = "<group>";
+		};
+		87A8C3D91C56ADF1008F4540 /* unit_tests */ = {
+			isa = PBXGroup;
+			children = (
+				F2CD64CB2141D3100097BA6C /* active_secret_tests.cpp */,
+				F2CD64CA2141D3100097BA6C /* test_runner.cpp */,
+			);
+			name = unit_tests;
+			sourceTree = "<group>";
+		};
+		EBA47A9717A6D31200B5FC4D = {
+			isa = PBXGroup;
+			children = (
+				8216D5821A9D412500ECED68 /* src */,
+				EBA47AA217A6D31200B5FC4D /* Frameworks */,
+				EBA47AA117A6D31200B5FC4D /* Products */,
+				87A8C3D91C56ADF1008F4540 /* unit_tests */,
+			);
+			sourceTree = "<group>";
+		};
+		EBA47AA117A6D31200B5FC4D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F5C997B91A154BBC0026054E /* libactive_secret_osx.a */,
+				87A8C3D21C56ADB9008F4540 /* active_secret_tests */,
+				F2CD64E92141D7440097BA6C /* libactive_secret_ios.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EBA47AA217A6D31200B5FC4D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AB2309AF1F719EF1003323D7 /* libcommon_osx.a */,
+				ABB66C391EFDD13C008E21FC /* libclibs_osx.a */,
+				87A8C43F1C57EE03008F4540 /* libz.1.tbd */,
+				87A8C43C1C57EBCC008F4540 /* Security.framework */,
+				87A8C4361C57EA7E008F4540 /* libcrypto.a */,
+				87A8C4381C57EA7E008F4540 /* libssl.a */,
+				87A8C4341C57EA11008F4540 /* gmock.framework */,
+				EBA47AA317A6D31200B5FC4D /* Foundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		87A8C3D11C56ADB9008F4540 /* active_secret_tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 87A8C3D81C56ADB9008F4540 /* Build configuration list for PBXNativeTarget "active_secret_tests" */;
+			buildPhases = (
+				F21132A62166558500377246 /* ShellScript */,
+				87A8C3CE1C56ADB9008F4540 /* Sources */,
+				87A8C3CF1C56ADB9008F4540 /* Frameworks */,
+				87A8C3D01C56ADB9008F4540 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = active_secret_tests;
+			productName = active_remote_tests;
+			productReference = 87A8C3D21C56ADB9008F4540 /* active_secret_tests */;
+			productType = "com.apple.product-type.tool";
+		};
+		F2CD64DE2141D7440097BA6C /* active_secret_ios */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F2CD64E62141D7440097BA6C /* Build configuration list for PBXNativeTarget "active_secret_ios" */;
+			buildPhases = (
+				F2CD64DF2141D7440097BA6C /* Sources */,
+				F2CD64E32141D7440097BA6C /* Frameworks */,
+				F2CD64E52141D7440097BA6C /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = active_secret_ios;
+			productName = active_remote;
+			productReference = F2CD64E92141D7440097BA6C /* libactive_secret_ios.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		F5C997B81A154BBC0026054E /* active_secret_osx */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F5C997BA1A154BBC0026054E /* Build configuration list for PBXNativeTarget "active_secret_osx" */;
+			buildPhases = (
+				F5C997B51A154BBC0026054E /* Sources */,
+				F5C997B61A154BBC0026054E /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = active_secret_osx;
+			productName = active_remote_osx;
+			productReference = F5C997B91A154BBC0026054E /* libactive_secret_osx.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EBA47A9817A6D31200B5FC4D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0940;
+				ORGANIZATIONNAME = MoneyDesktop;
+				TargetAttributes = {
+					87A8C3D11C56ADB9008F4540 = {
+						CreatedOnToolsVersion = 7.1;
+						DevelopmentTeam = 7G4R3776NX;
+					};
+					F2CD64DE2141D7440097BA6C = {
+						DevelopmentTeam = 7G4R3776NX;
+					};
+					F5C997B81A154BBC0026054E = {
+						CreatedOnToolsVersion = 6.1;
+						DevelopmentTeam = 7G4R3776NX;
+					};
+				};
+			};
+			buildConfigurationList = EBA47A9B17A6D31200B5FC4D /* Build configuration list for PBXProject "active_secret" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = EBA47A9717A6D31200B5FC4D;
+			productRefGroup = EBA47AA117A6D31200B5FC4D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F5C997B81A154BBC0026054E /* active_secret_osx */,
+				87A8C3D11C56ADB9008F4540 /* active_secret_tests */,
+				F2CD64DE2141D7440097BA6C /* active_secret_ios */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		F21132A62166558500377246 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 12;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = bin/sh;
+			shellScript = "ruby $SRCROOT/config/encrypted_script.rb";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		87A8C3CE1C56ADB9008F4540 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F2C19454217E730900DA268F /* symmetric_aes.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F2CD64DF2141D7440097BA6C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F2C19455217E730900DA268F /* symmetric_aes.cpp in Sources */,
+				F2CD64E02141D7440097BA6C /* active_secret_tests.cpp in Sources */,
+				F2CD64E12141D7440097BA6C /* symmetric_evp.cpp in Sources */,
+				F2CD64E22141D7440097BA6C /* test_runner.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F5C997B51A154BBC0026054E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F2CD64D02141D3100097BA6C /* active_secret_tests.cpp in Sources */,
+				F2C19453217E730900DA268F /* symmetric_aes.cpp in Sources */,
+				F2CD64C82141D2F80097BA6C /* symmetric_evp.cpp in Sources */,
+				F2CD64CD2141D3100097BA6C /* test_runner.cpp in Sources */,
+				F2CF03742152EA4E00D04C0A /* asymmetric_evp.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		87A8C3D61C56ADB9008F4540 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/../../clibs/lib/osx/Debug";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/../../clibs/include",
+					"$(SRCROOT)/../../clibs/include/osx",
+				);
+				LIBRARY_SEARCH_PATHS = "$(SRCROOT)/../../clibs/lib/osx/Release";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		87A8C3D71C56ADB9008F4540 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/../../clibs/lib/osx/Debug";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/../../clibs/include",
+					"$(SRCROOT)/../../clibs/include/osx",
+				);
+				LIBRARY_SEARCH_PATHS = "$(SRCROOT)/../../clibs/lib/osx/Release";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		EBA47AAC17A6D31200B5FC4D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "c++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES_AGGRESSIVE;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = 7G4R3776NX;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_TREAT_IMPLICIT_FUNCTION_DECLARATIONS_AS_ERRORS = YES;
+				GCC_TREAT_INCOMPATIBLE_POINTER_TYPE_WARNINGS_AS_ERRORS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_HIDDEN_VIRTUAL_FUNCTIONS = YES;
+				GCC_WARN_INITIALIZER_NOT_FULLY_BRACKETED = YES;
+				GCC_WARN_NON_VIRTUAL_DESTRUCTOR = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = NO;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+				);
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				USER_HEADER_SEARCH_PATHS = "$(inherited) $(SRCROOT)/../src $(SRCROOT)/../../mmx-common/src";
+			};
+			name = Debug;
+		};
+		EBA47AAD17A6D31200B5FC4D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "c++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES_AGGRESSIVE;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = 7G4R3776NX;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_TREAT_IMPLICIT_FUNCTION_DECLARATIONS_AS_ERRORS = YES;
+				GCC_TREAT_INCOMPATIBLE_POINTER_TYPE_WARNINGS_AS_ERRORS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_HIDDEN_VIRTUAL_FUNCTIONS = YES;
+				GCC_WARN_INITIALIZER_NOT_FULLY_BRACKETED = YES;
+				GCC_WARN_NON_VIRTUAL_DESTRUCTOR = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = NO;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+				);
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				USER_HEADER_SEARCH_PATHS = "$(inherited) $(SRCROOT)/../src $(SRCROOT)/../../mmx-common/src";
+			};
+			name = Release;
+		};
+		F2CD64E72141D7440097BA6C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				ENABLE_BITCODE = NO;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../../clibs/include/ios\"",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../../curl/lib/ios/Release\"",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		F2CD64E82141D7440097BA6C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				ENABLE_BITCODE = NO;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../../clibs/include/ios\"",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../../curl/lib/ios/Release\"",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F5C997BB1A154BBC0026054E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				EXECUTABLE_PREFIX = lib;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/../../clibs/include/osx",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		F5C997BC1A154BBC0026054E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				EXECUTABLE_PREFIX = lib;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/../../clibs/include/osx",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		87A8C3D81C56ADB9008F4540 /* Build configuration list for PBXNativeTarget "active_secret_tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				87A8C3D61C56ADB9008F4540 /* Debug */,
+				87A8C3D71C56ADB9008F4540 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EBA47A9B17A6D31200B5FC4D /* Build configuration list for PBXProject "active_secret" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EBA47AAC17A6D31200B5FC4D /* Debug */,
+				EBA47AAD17A6D31200B5FC4D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F2CD64E62141D7440097BA6C /* Build configuration list for PBXNativeTarget "active_secret_ios" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F2CD64E72141D7440097BA6C /* Debug */,
+				F2CD64E82141D7440097BA6C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F5C997BA1A154BBC0026054E /* Build configuration list for PBXNativeTarget "active_secret_osx" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F5C997BB1A154BBC0026054E /* Debug */,
+				F5C997BC1A154BBC0026054E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = EBA47A9817A6D31200B5FC4D /* Project object */;
+}
