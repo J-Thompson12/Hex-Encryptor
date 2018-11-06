@@ -1,6 +1,7 @@
 #pragma once
 #define STRING_HEADER "strings.h"
-#define ENCODE(x) ActiveSecret::Aes::decrypt(x)
+// use macro to decrypt strings at runtime
+#define DECRYPT_STRING(x) ActiveSecret::Aes::decrypt(x)
 #define KEYLENGTH 256
 
 #include "openssl/rand.h"

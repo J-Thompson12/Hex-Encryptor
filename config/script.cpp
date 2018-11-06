@@ -12,15 +12,17 @@
   unsigned char _iv[KEYSIZE];
   std::unordered_map<std::string, std::string> hashtable;
 
+// generates random key
   void gen_key(){
     RAND_bytes(_key, sizeof(_key));
   }
 
+// generates random iv
   void gen_iv(){
     RAND_bytes(_iv, sizeof(_iv));
   }
 
-
+// encrypts strings using AES CBC 256
   std::string encrypt(std::string input){
     int inputlength = input.size();
     int RequiredPadding = (AES_BLOCK_SIZE - (inputlength % AES_BLOCK_SIZE));
@@ -48,15 +50,15 @@
     return base64string;
   }
 
-
+// obfuscates key and iv twice 
 std::string xor_char(unsigned char *input){
   
-    int key = 12;
+    int key = 128;
     for(int i = 0; i < KEYSIZE; i++){
       input[i] = input[i] ^ key;
     }
     for(int i = 0; i < KEYSIZE; i++){
-      input[i] = input[i] ^ key - 6;
+      input[i] = input[i] ^ key - 27;
     }
 
     std::string output = base64::encode(input, KEYSIZE);
@@ -64,6 +66,7 @@ std::string xor_char(unsigned char *input){
     return output;
   }
 
+// creates header file for encrypted strings
   void erb_h(){
     std::ofstream outputFile("/Users/Thompson/Documents/Helios/active_secret/src/strings.h");
     
@@ -82,6 +85,7 @@ std::string xor_char(unsigned char *input){
       std::cout << "could not create file";
     }
   }
+  // creates cpp file for encrypted strings
   void erb_cpp(){
     std::ofstream outputFile("/Users/Thompson/Documents/Helios/active_secret/src/strings.cpp");
     
@@ -100,6 +104,8 @@ std::string xor_char(unsigned char *input){
       std::cout << "could not create file";
     }
   }
+
+  //reads txt file with strings to encrypt
   void readfile(){
     std::ifstream inputFile;
     inputFile.open("/Users/Thompson/documents/Helios/active_secret/config/secrets.txt");

@@ -2,6 +2,8 @@
 
 namespace ActiveSecret {
 
+
+  // un-obfuscates key and iv
   std::string Aes::xor_string(std::string input){
     std::string data = base64::decode(input);
     
@@ -15,7 +17,7 @@ namespace ActiveSecret {
     return data;
   }
 
-  
+  // can be called during runtime to encrypt strings in RAM
   std::string Aes::encrypt(std::string input){
     size_t inputlength = input.size();
     int RequiredPadding = (AES_BLOCK_SIZE - (inputlength % AES_BLOCK_SIZE));
@@ -39,6 +41,7 @@ namespace ActiveSecret {
     return base64string;
   }
 
+  // can be used during runtime but is also used to decrypt any strings encrypted at buildtime
   std::string Aes::decrypt(std::string input){
 
     auto base64string = base64::decode(input);

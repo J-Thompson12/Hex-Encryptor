@@ -17,6 +17,7 @@ def encrypt(data)
     enc = Base64.strict_encode64(encrypted)
 end
 
+# would like to spread key and iv across multiple files for better obfuscation work in progress
 def spread(text)
     test = Random.new(12345)
     4.times do
